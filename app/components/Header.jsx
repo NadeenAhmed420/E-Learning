@@ -42,15 +42,13 @@ const Header = () => {
         <img src="/swiper-5.svg" alt="Logo 5" />
         <img src="/swiper-6.svg" alt="Logo 6" />
       </div>
-      <div className="relative w-full h-[400px] mt-10 mb-0">
-        <Image
-          className="object-cover"
+   
+        <img
+          className="object-fill w-full h-[400px] mt-10 mb-0"
           src="/header-bg.png"
           alt="Header Background"
-          priority
-          fill
         />
-      </div>
+
     </header>
   );
 };
