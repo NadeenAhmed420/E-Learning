@@ -13,7 +13,7 @@ export default function CourseDetailPage({ params }) {
     <div className="my-10">
       <TopHeader title={course.title} description={course.description} />
 
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 p-6">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 ">
         {course.curriculum.map((module) => (
           <div
             key={module.module}
