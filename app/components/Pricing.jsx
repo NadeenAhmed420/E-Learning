@@ -21,19 +21,19 @@ const Pricing = () => {
         activeButton={activeButton}
       />
 
-      <section className="bg-white p-4 md:p-8 grid grid-cols-1 lg:grid-cols-2 gap-8 rounded-2xl">
+      <section className="bg-white md:p-4 grid grid-cols-1 lg:grid-cols-2 gap-8 rounded-2xl">
         {pricingData.map((plan, planIndex) => (
           <div
             key={plan.id}
-            className="rounded-2xl p-4 md:p-8 border border-gray-100 bg-neutral-50"
+            className="rounded-2xl border border-gray-100 bg-gray-50 p-4 "
           >
             <h3
               id={plan.id}
-              className="text-gray-800 bg-gray-100 border border-amber-500 p-2 text-center rounded-md text-sm"
+              className="text-gray-800 bg-gray-100 border border-amber-500 p-2 text-center rounded-md text-sm mt-4 "
             >
               {plan.name}
             </h3>
-            <p className="flex items-baseline justify-center gap-x-2 mt-5">
+            <p className="flex items-baseline justify-center gap-x-2 mt-5 ">
               <span className="text-gray-900 text-6xl font-semibold tracking-tight">
                 {activeButton === "Monthly"
                   ? plan.priceMonthly

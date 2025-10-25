@@ -11,7 +11,7 @@ import {
 
 const FAQ = () => {
   return (
-    <div className="bg-white p-5 md:p-8 grid md:grid-cols-12 gap-y-8 rounded-2xl mt-20 text-gray-700">
+    <div className="bg-white p-4 md:p-8 grid md:grid-cols-12 gap-y-8 rounded-2xl mt-10 text-gray-700">
       <div className="col-span-12 lg:col-span-5">
         <h4 className="font-semibold text-2xl md:text-4xl text-gray-800 md:leading-12">
           Frequently <br /> Asked Questions

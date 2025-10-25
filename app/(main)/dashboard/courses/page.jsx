@@ -17,7 +17,7 @@ const Page = () => {
   );
 
   const cardStyle =
-    "w-full bg-white border border-gray-100 p-8 shadow-sm rounded-2xl my-10";
+    "w-full bg-white border border-gray-100 p-4 md:p-8 shadow-sm rounded-2xl ";
 
   return (
     <>
@@ -26,7 +26,7 @@ const Page = () => {
         description="Welcome to our online course page. Search and explore the courses below."
       />
 
-      <div className="relative w-100 ms-auto mt-10">
+      <div className="relative md:w-100 ms-auto mb-5">
         <Input
           type="text"
           placeholder="Search Courses ....."
@@ -43,17 +43,17 @@ const Page = () => {
         {filteredCourses.length > 0 ? (
           filteredCourses.map((course) => (
             <div key={course.id} className={cardStyle}>
-              <div className="flex justify-between items-center gap-8">
+              <div className="flex flex-col-reverse md:flex-row justify-start md:justify-between ">
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-800">
                     {course.title}
                   </h3>
-                  <p className="text-gray-500 text-md my-4 md:max-w-4xl">
+                  <p className="text-gray-500 my-5 md:max-w-4xl">
                     {course.description}
                   </p>
                 </div>
                 <Button
-                  className="text-black font-semibold hover:bg-amber-500 hover:text-white hover:font-bold "
+                  className="text-black font-semibold hover:bg-amber-500 hover:text-white hover:font-bold mb-4 "
                   variant="outline"
                 >
                   <Link href={`/dashboard/courses/${course.id}`}>View Course</Link>
@@ -75,22 +75,22 @@ const Page = () => {
                   <Badge variant="outline">{course.level}</Badge>
                   <Badge variant="outline">{course.duration}</Badge>
                 </div>
-                <span className="text-gray-800 font-medium italic underline text-sm md:text-md">
+                <span className="text-gray-800 font-medium italic underline text-sm ">
                   {course.author}
                 </span>
               </div>
-              <div className="border border-gray-200 rounded-lg mt-7">
-                <h5 className="text-black font-semibold text-2xl p-6">
+              <div className="border border-gray-200 rounded-lg mt-5">
+                <h5 className="text-black font-semibold text-xl p-4">
                   Curriculum
                 </h5>
                 <hr className="border border-gray-200" />
-                <div className="grid grid-cols-1 md:grid-cols-5 text-white px-6">
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-x-10 text-white px-6">
                   {course.curriculum.map((module) => (
                     <div key={module.module} className="my-4">
-                      <span className="text-4xl text-black font-semibold ">
+                      <span className="text-3xl text-black font-semibold ">
                         {module.module}
                       </span>
-                      <p className="text-md text-gray-400 mt-3 w-50 font-medium">
+                      <p className="text-xs text-gray-400 mt-3 ">
                         {module.title}
                       </p>
                     </div>

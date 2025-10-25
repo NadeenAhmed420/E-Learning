@@ -4,7 +4,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 import { benefitsData } from "../lib/data";
 
 const Benefits = () => {
-  const cardStyle = "bg-white p-5 md:p-8 rounded-lg shadow-sm transform translate-y-2.5 transition-all duration-300 ease hover:translate-y-0 ";
+  const cardStyle = "bg-white p-5 rounded-lg shadow-sm transform translate-y-2.5 transition-all duration-300 ease hover:translate-y-0 ";
   return (
     <>
       <TopSection

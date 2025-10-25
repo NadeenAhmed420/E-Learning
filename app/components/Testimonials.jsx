@@ -5,7 +5,7 @@ import { testimonialsData } from "../lib/data";
 
 const Testimonials = () => {
   const cardStyle =
-    "bg-white rounded-lg p-5 md:p-8 shadow-sm transform translate-y-2.5 transition-all duration-300 ease hover:translate-y-0 ";
+    "bg-white rounded-lg p-6 shadow-sm transform translate-y-2.5 transition-all duration-300 ease hover:translate-y-0 ";
   return (
     <>
       <TopSection
@@ -18,7 +18,7 @@ const Testimonials = () => {
           <div key={id} className={cardStyle}>
             <p className="text-sm text-gray-600 mb-8">{description}</p>
             <hr className="border-b border-gray-100" />
-            <div className="flex justify-between items-center px-5 md:px-8 ">
+            <div className="flex justify-between items-center">
               <div className="flex items-center mt-5">
                 <img className="w-9 h-9" src={img} alt={`profile ${id}`} />
                 <small className="text-xs font-medium text-gray-900 py-1 px-3">

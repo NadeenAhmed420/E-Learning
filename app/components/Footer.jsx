@@ -9,8 +9,8 @@ import { RxInstagramLogo } from "react-icons/rx";
 
 const Footer = () => {
   return (
-    <footer className="bg-white gap-10 pt-10 pb-5">
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-5 sm:px-15">
+    <footer className="bg-white gap-10 pt-10 pb-5 mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-5 sm:px-15">
         <div>
           <img src="/Logo.svg" className="w-9 h-9" alt="logo" />
           <div className="mt-8 space-y-3">

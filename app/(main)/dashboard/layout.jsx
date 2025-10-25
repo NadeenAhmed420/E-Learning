@@ -4,9 +4,9 @@ import NavBar from "@/app/components/NavBar";
 
 export default function DashboardLayout({ children }) {
   return (
-    <div className="bg-neutral-50">
+    <div className="bg-gray-50">
       <NavBar/>
-      <main className="container mx-auto px-5 sm:px-15">{children}</main>
+      <main className="lg:container mx-auto px-5 md:px-10">{children}</main>
       <Footer />
     </div>
   );

@@ -21,7 +21,7 @@ import { testimonialsData } from "@/app/lib/data";
 
 export default function LoginPage() {
   const formStyle =
-    "w-full h-[500px] flex flex-col justify-center items-start bg-white opacity-95 border border-amber-500 p-4 md:p-8 rounded-xl shadow-sm";
+    "w-full h-[500px] flex flex-col justify-center items-start bg-white opacity-95 border border-gray-300 p-4 md:p-8 rounded-xl ";
   const { login, loading } = useAuth();
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -64,14 +64,12 @@ export default function LoginPage() {
     Autoplay({ delay: 2000, stopOnInteraction: false }) 
   );
   return (
-    <section className="container grid grid-cols-1 lg:grid-cols-2 gap-14 px-5 py-10 md:py-10">
-      <div>
+    <section className="container grid grid-cols-1 lg:grid-cols-2 gap-14 px-5 py-10 ">
+      <div className="hidden md:block">
         <div>
           <h1 className="text-4xl font-semibold mb-4">Students Testimonials</h1>
-          <p className="text-xl ">
-            Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget
-            elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum
-            eget habitasse in velit fringilla feugiat senectus in.
+          <p className="text-xl">
+            Hear from our learners! Real stories, real progress—discover how our platform is helping students around the globe master new skills and advance their careers.
           </p>
         </div>
         <Carousel
@@ -171,7 +169,7 @@ export default function LoginPage() {
           type="submit"
           size="sm"
           disabled={loading}
-          className="w-full bg-amber-600/90 text-white px-4  hover:bg-amber-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-5"
+          className="w-full bg-amber-600/90 text-white px-4  hover:bg-amber-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-8"
         >
           {loading ? (
             <>

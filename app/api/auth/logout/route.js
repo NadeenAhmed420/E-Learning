@@ -27,5 +27,16 @@ export async function POST() {
     expires: new Date(0),
   });
 
+  // ✅ remove user cookie
+  response.cookies.set("user", "", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "strict",
+    priority: "high",
+    path: "/",
+    maxAge: 0, // delete immediately
+    expires: new Date(0),
+  });
+
   return response;
 }

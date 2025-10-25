@@ -15,8 +15,11 @@ export async function POST(req) {
       );
     }
 
+    // Fallback for BACKEND_URL
+    const BACKEND_URL = process.env.BACKEND_URL ?? "https://linked-posts.routemisr.com";
+
     // Proxy to backend signin endpoint
-    const res = await fetch(`${process.env.BACKEND_URL}/users/signin`, {
+    const res = await fetch(`${BACKEND_URL}/users/signin`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(parsed.data),
@@ -41,12 +44,26 @@ export async function POST(req) {
     // Log the token
     console.log("🔑 Login token:", token);
 
+    const userInfo = data.user || { email: parsed.data.email };
+    console.log("👤 User info to store:", userInfo);
+    
     const response = NextResponse.json({
       success: true,
-      user: data.user || { email: parsed.data.email },
+      user: userInfo,
     });
 
+    // Store token
     response.cookies.set("token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+      priority: "high",
+      path: "/",
+      maxAge: 60 * 60 * 24 * 7, // 7 days
+    });
+
+    // Store user info in a separate cookie for easy access
+    response.cookies.set("user", JSON.stringify(userInfo), {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "strict",

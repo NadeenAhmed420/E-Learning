@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export const config = {
-  matcher: ["/login", "/register", "/dashboard/:path*"],
+  matcher: ["/", "/login", "/register", "/dashboard/:path*"],
 };
 
 export function middleware(req) {
@@ -9,6 +9,15 @@ export function middleware(req) {
   const { pathname } = req.nextUrl;
 
   const publicAuthRoutes = ["/login", "/register"];
+
+  // ✅ Handle root path redirection
+  if (pathname === "/") {
+    if (token) {
+      return NextResponse.redirect(new URL("/dashboard", req.url));
+    } else {
+      return NextResponse.redirect(new URL("/login", req.url));
+    }
+  }
 
   // ✅ If visiting login/register but already logged in → redirect to dashboard
   if (publicAuthRoutes.some((p) => pathname.startsWith(p))) {

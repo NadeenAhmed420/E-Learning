@@ -37,7 +37,7 @@ import { IoEyeOff, IoEyeSharp } from "react-icons/io5";
 
 export default function RegisterPage() {
   const formStyle =
-    "w-full flex flex-col justify-center items-start bg-white opacity-95 border border-amber-500 p-4 md:p-8 rounded-xl shadow-sm";
+    "w-full flex flex-col justify-center items-start bg-white opacity-95 border border-gray-300 p-4 md:p-8 rounded-xl shadow-sm";
   const router = useRouter();
   const { register, loading } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
@@ -98,13 +98,13 @@ export default function RegisterPage() {
   );
   return (
     <section className="container grid grid-cols-1 lg:grid-cols-2 gap-14 px-5 py-10 md:py-10">
-      <div className="flex flex-col justify-center items-center">
+      <div className="hidden md:flex flex-col justify-center items-center">
         <div>
           <h1 className="text-4xl font-semibold mb-4">Students Testimonials</h1>
-          <p className="text-xl ">
-            Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget
-            elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum
-            eget habitasse in velit fringilla feugiat senectus in.
+          <p className="text-xl">
+            Hear from our learners! Real stories, real progress—discover how our
+            platform is helping students around the globe master new skills and
+            advance their careers.
           </p>
         </div>
         <Carousel
@@ -192,7 +192,7 @@ export default function RegisterPage() {
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+            className="absolute right-3 top-[26px] transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
           >
             {showPassword ? (
               <IoEyeSharp className="h-5 w-5" />
@@ -217,7 +217,7 @@ export default function RegisterPage() {
           <button
             type="button"
             onClick={() => setShowRePassword(!showRePassword)}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+            className="absolute right-3 top-[26px] transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
           >
             {showRePassword ? (
               <IoEyeSharp className="h-5 w-5" />
@@ -230,7 +230,7 @@ export default function RegisterPage() {
           <p className="text-red-500">{errors.rePassword}</p>
         )}
 
-        <label className="text-md text-black mt-5" htmlFor="dateOfBirth">
+        <label className="text-md text-black mt-5 mb-2" htmlFor="dateOfBirth">
           Date Of Birth
         </label>
         <Popover>
@@ -238,7 +238,7 @@ export default function RegisterPage() {
             <Button
               variant="outline"
               data-empty={!formData.dateOfBirth}
-              className="data-[empty=true]:text-muted-foreground w-full justify-start text-left font-normal  shadow-sm text-black"
+              className="data-[empty=true]:text-muted-foreground w-full justify-start text-left font-normal text-black"
             >
               <CalendarIcon className="mr-2 h-4 w-4" />
               {formData.dateOfBirth ? (
@@ -303,7 +303,7 @@ export default function RegisterPage() {
           type="submit"
           size="sm"
           disabled={loading}
-          className="w-full bg-amber-600/90 text-white px-4  hover:bg-amber-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-5"
+          className="w-full bg-amber-600/90 text-white px-4  hover:bg-amber-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-8"
         >
           {loading ? (
             <>
